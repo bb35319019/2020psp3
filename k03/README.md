@@ -46,6 +46,7 @@ l:73~78 比較場所を１つ後ろにする。
 
 ```
 Force Search. Find keyword at:wind in my hair.
+BM Search. Find keyword at:(null)
 
 ```
 
