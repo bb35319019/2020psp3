@@ -51,7 +51,7 @@ char* BMSearch(char text[], char key[])
        n++;
    }
 
-   while(index <= text_len)
+   while(index <= text_len - 1)
    {
        while(pos >= 0)
        {
@@ -73,6 +73,10 @@ char* BMSearch(char text[], char key[])
        index_before = index;
        index = index + table[(int)text[index]];
        if(index_before > index)
+       {
+           index = index_before + 1;
+       }
+       else if(index_before = index)
        {
            index = index_before + 1;
        }
