@@ -68,8 +68,8 @@ char* BMSearch(char text[], char key[])
                pos = key_len - 1;
                break;
            }
-           index_before = index;
        }
+       index_before = index;
        index = index + table[(int)text[index]];
        if(index_before > index || index_before == index)
        {
