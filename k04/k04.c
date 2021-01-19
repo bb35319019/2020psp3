@@ -106,41 +106,41 @@ void QuickSort(City arrayCity[], int left, int right)
    City pivot, City_tmp;
    if((right - left) >= 1)
    {
-       i = left;
-       j = right;
+       i = right;
+       j = left;
        pivot = arrayCity[left];
        while(1)
        {
-           while(i <= right)
+           while(j <= right)
            {
-               if(pivot.seafood < arrayCity[i].seafood)
-               {
-                   break;
-               }
-               i++;
-           }
-           while(j >= left)
-           {
-               if(pivot.seafood >= arrayCity[j].seafood)
+               if(pivot.seafood < arrayCity[j].seafood)
                {
                    break;
                }
                j++;
            }
-           if(i >= j)
+           while(i >= left)
+           {
+               if(pivot.seafood >= arrayCity[i].seafood)
+               {
+                   break;
+               }
+               i++;
+           }
+           if(j >= i)
            {
                break;
            }
            else
            {
                City_tmp = arrayCity[i];
-               arrayCity[i] = arrayCity[j];
-               arrayCity[j] = City_tmp;
+               arrayCity[j] = arrayCity[left];
+               arrayCity[left] = City_tmp;
            }
        }
        City_tmp = arrayCity[i];
        arrayCity[left] = arrayCity[j];
-       arrayCity[j] = City_tmp;
+       arrayCity[j-1] = City_tmp;
        QuickSort(arrayCity, left, j-i);
        QuickSort(arrayCity, j+1, right);
    }
